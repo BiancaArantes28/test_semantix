@@ -1,0 +1,40 @@
+.sideNav {
+    position: fixed;
+    width: 105px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(180deg, #000000 0%, #B5B5B5 100%);
+}
+
+.title {
+    padding: 10px;
+}
+
+.title span {
+    color: #fff;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.nav ul li {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+}
