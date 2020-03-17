@@ -8,8 +8,6 @@ import PieChart from '../../common/charts/PieChart';
 
 import { RESULTS_STATUS } from '../../store/reducers/resultsReducer';
 
-import './home.css';
-
 class HomePage extends Component {
     constructor(props) {
         super(props);
@@ -57,7 +55,7 @@ class HomePage extends Component {
             content = this.renderBody(data, labels);
         }
         return (
-            <div className="page-one">
+            <div className="page">
                 <h1>Page 1</h1>
                 {content}
             </div>

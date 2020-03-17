@@ -4,6 +4,10 @@
   margin-left: 110px;
 }
 
+.page h1 {
+  padding: 12px;
+}
+
 .spacing {
   width: 100%;
   display: flex;
