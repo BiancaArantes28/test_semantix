@@ -12,16 +12,17 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Header />
-        <div className="container">
-          <Router>
+
+        <Router>
+          <Header />
+          <div className="container">
             <Switch>
               <Route path="/page1" component={HomeContainer} />
               <Route path="/page2" component={SecondPage} />
               <Redirect to="/page1" />
             </Switch>
-          </Router>
-        </div>
+          </div>
+        </Router>
       </div>
     </Provider>
 
