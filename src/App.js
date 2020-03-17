@@ -12,12 +12,14 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <Header />
-        <Router>
-          <Switch>
-            <Route path="/page1" component={HomeContainer} />
-            <Redirect to="/page1" />
-          </Switch>
-        </Router>
+        <div className="container">
+          <Router>
+            <Switch>
+              <Route path="/page1" component={HomeContainer} />
+              <Redirect to="/page1" />
+            </Switch>
+          </Router>
+        </div>
       </div>
     </Provider>
 

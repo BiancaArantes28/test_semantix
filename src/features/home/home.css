@@ -1,0 +1,12 @@
+.hide {
+    display: none;
+}
+
+.page-one h1 {
+    padding: 12px;
+}
+
+.chart-card {
+    width: 50%;
+    padding: 15px;
+}

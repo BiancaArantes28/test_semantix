@@ -1,21 +1,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { fetchResults } from '../../store/actions/resultsActions';
+import { getStatus, getData, getLabels } from '../../store/selectors/resultsSelectors';
+import { RESULTS_STATUS } from '../../store/reducers/resultsReducer';
+import HomePage from './HomePage';
+import Spinner from '../../common/spinner/Spinner';
 
 class HomeContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchResult();
+        if (RESULTS_STATUS.NOT_FETCHED) {
+            this.props.fetchResult();
+        }
     }
+    
     render() {
         return (
-            <h1>Home</h1>
+            <HomePage
+                data={this.props.data}
+                labels={this.props.labels}
+                results={this.props.results}
+                status={this.props.status}
+            />
         );
     }
 }
 
+HomeContainer.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.number),
+    labels: PropTypes.arrayOf(PropTypes.string),
+    fetchResult: PropTypes.func.isRequired,
+    status: PropTypes.string.isRequired,
+};
+
 const mapStateToProps = (state) => ({
-    results: state.results.results,
+    data: getData(state),
+    labels: getLabels(state),
+    status: getStatus(state),
 });
 
 const mapDispatchToProps = (dispatch) => {

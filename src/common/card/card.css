@@ -1,0 +1,25 @@
+.card-item {
+    padding: 12px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card-xs-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+}
+
+.card-body {
+    color: rgba(0, 0, 0, 0.54);
+    padding: 16px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 2px 3px 2px 3px #D8DDE6;
+}
+
+@media (max-width: 767.98px) {
+    .card-xs-6 {
+        max-width: 100%;
+    }
+}
