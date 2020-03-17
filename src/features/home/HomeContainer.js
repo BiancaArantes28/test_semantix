@@ -5,7 +5,6 @@ import { fetchResults } from '../../store/actions/resultsActions';
 import { getStatus, getData, getLabels } from '../../store/selectors/resultsSelectors';
 import { RESULTS_STATUS } from '../../store/reducers/resultsReducer';
 import HomePage from './HomePage';
-import Spinner from '../../common/spinner/Spinner';
 
 class HomeContainer extends Component {
 
@@ -14,7 +13,7 @@ class HomeContainer extends Component {
             this.props.fetchResult();
         }
     }
-    
+
     render() {
         return (
             <HomePage

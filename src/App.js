@@ -1,12 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import store from './store';
+
 import Header from './common/header/Header';
 import HomeContainer from './features/home/HomeContainer';
 import SecondPage from './features/second/SecondPage';
+
+import store from './store';
+
+import './App.css';
 
 function App() {
   return (
