@@ -19,9 +19,11 @@ const defaultState = {
 };
 
 const successfulResults = (state, payload) => {
+    console.log(payload);
     return {
         ...withoutError(state),
         results: payload,
+        status: RESULTS_STATUS.FETCHED,
     }
 };
 
@@ -32,7 +34,7 @@ export default function results(state = defaultState, action) {
         case FETCH_RESULTS_SUCCESSFUL:
             return successfulResults(state, action.payload);
         case FETCH_RESULTS_FAILED:
-            return { ...state, error: action.payload };
+            return { ...state, error: action.payload, status: RESULTS_STATUS.FETCHED };
         default:
             return state;
     }

@@ -6,15 +6,15 @@ import {
     fetchResultsSuccessful,
  } from '../actions/resultsActions';
  import { getSemantixAPIURL } from '../../config/getPATH';
+import { fetchGet } from './sagaUtils';
 
  export function* doFetchResults() {
      try {
         const serviceBaseUrl = getSemantixAPIURL();
-        console.log(serviceBaseUrl);
-        const payload = {
-            success: true,
-        }
-        yield put(fetchResultsSuccessful(payload));
+        const endpoint = `${serviceBaseUrl}/anual-result`;
+        
+        const response = yield call(fetchGet, endpoint);
+        yield put(fetchResultsSuccessful(response));
      } catch(error) {
         yield put(fetchResultsFailed(error));
      }
